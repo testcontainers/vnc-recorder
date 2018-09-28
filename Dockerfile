@@ -2,7 +2,7 @@
 #
 # VERSION	0.1
 
-FROM debian:wheezy
+FROM debian:jessie-slim
 MAINTAINER Richard North <rich.north@gmail.com>
 
 LABEL Description="This image can be used to create a sidekick container for recording videos of VNC sessions hosted in other containers"
