@@ -2,16 +2,16 @@
 #
 # VERSION	0.1
 
-FROM debian:jessie-slim
-MAINTAINER Richard North <rich.north@gmail.com>
+FROM debian:10.5-slim
 
 LABEL Description="This image can be used to create a sidekick container for recording videos of VNC sessions hosted in other containers"
+LABEL maintainer="Richard North <rich.north@gmail.com>"
 
 RUN apt-get update && apt-get install -y \
-  python-pip python-dev \
-  && rm -rf /var/lib/apt/lists/*
-
-RUN pip install vnc2flv
+  python-pip python-dev ffmpeg=7:4.1.6-1~deb10u1 \
+  && rm -rf /var/lib/apt/lists/* \
+  && pip install vnc2flv \
+  && rm -fr /tmp/*
 
 ENTRYPOINT ["flvrec.py"]
 CMD ["--help"]
