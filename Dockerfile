@@ -8,7 +8,7 @@ LABEL Description="This image can be used to create a sidekick container for rec
 LABEL maintainer="Richard North <rich.north@gmail.com>"
 
 RUN apt-get update && apt-get install -y \
-  python-pip python-dev ffmpeg=7:4.1.6-1~deb10u1 \
+  python-pip python-dev ffmpeg \
   && rm -rf /var/lib/apt/lists/* \
   && pip install vnc2flv \
   && rm -fr /tmp/*
