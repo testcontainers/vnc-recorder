@@ -2,7 +2,7 @@ name: Build multi-arch Docker Image
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
 
 jobs:
